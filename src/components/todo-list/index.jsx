@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { addTodo } from "../../store/slice/todoSlice";
-import todoList from
+
 
 const TodoList = () => {
   const [currentTodo, setCurrentTodo] = useState("");
