@@ -5,12 +5,12 @@ import todoList from
 
 const TodoList = () => {
   const [currentTodo, setCurrentTodo] = useState("");
-  // console.log(currentTodo)
 
 
   const dispatch = useDispatch()
+
   const {todoList} = useSelector(state => state)
-  console.log(todoList)
+  // console.log(todoList)
 
 
 
