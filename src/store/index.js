@@ -3,10 +3,13 @@
 
 import { configureStore } from "@reduxjs/toolkit";
 import todoReducer from './slice/todoSlice'
+import newTodo from '../another-todo/another-todo-slice'
+
 
 const store = configureStore({
     reducer:{
-        todo: todoReducer,
+        todos: todoReducer,
+        secondTodos:newTodo,
 
         //these is the way we can add other reducers to our global store
         // product:productReducer,

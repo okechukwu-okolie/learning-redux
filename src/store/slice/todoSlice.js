@@ -25,6 +25,8 @@ const todoReducer = createSlice({
         title: action.payload,
       };
       state.todoList.push(newlyCreatedTodo);
+      // [...state.todoList, newlyCreatedTodo]
+
       return state;
     },
 
@@ -35,18 +37,20 @@ const todoReducer = createSlice({
       return state;
     },
 
+
+
+
+
     editTodo(state, action) {
-      // state.todoList = state.todoList.filter(todoItem => todoItem.id === action.payload)
-      let getTodos = state.todoList;
+
+      let getTodos = state.todoList;     
 
       let getCurrentTodoIndex = getTodos.findIndex(
         (item) => item.id === action.payload.currentTodo
       );
 
-      getTodos[getCurrentTodoIndex] = {
-        ...getTodos[getCurrentTodoIndex],
-        title: action.payload.currentTodo,
-      };
+console.log(getCurrentTodoIndex)
+      getTodos[getCurrentTodoIndex] = {...getTodos[getCurrentTodoIndex], title: action.payload.currentTodo};
 
       state.todoList = getTodos;
       console.log(getCurrentTodoIndex);
@@ -54,8 +58,9 @@ const todoReducer = createSlice({
       return state;
     },
 
-   
   },
+
+
 
   //outside the reducer object
    extraReducers : (builder)=>{

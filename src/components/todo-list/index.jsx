@@ -10,7 +10,7 @@ const TodoList = () => {
 
   const dispatch = useDispatch()
 
-  const {todoList, todoListFromApi, loading} = useSelector(state => state.todo)
+  const {todoList, todoListFromApi, loading} = useSelector(state => state.todos)
   console.log(todoListFromApi)
 
 
@@ -25,10 +25,11 @@ const TodoList = () => {
   }
 
   const handleEdit = (getCurrentTodo)=>{
-   
     setEditedTodoItem(getCurrentTodo.id)
     setCurrentTodo(getCurrentTodo.title)
   }
+
+  
   const handleEditUpdate = ()=>{
      dispatch(editTodo({
       currentTodo,
@@ -36,6 +37,13 @@ const TodoList = () => {
     }))
     setCurrentTodo('')
   }
+
+
+  const shoutOut =()=>{
+
+  }
+
+
 
   const fetchListOfTodos =()=>{
     dispatch(fetchTodos())
@@ -67,6 +75,7 @@ const TodoList = () => {
         </li>  ): null}
       </ul>
       <button onClick={fetchListOfTodos}>Fetch list of API</button>
+      <button onClick={shoutOut}></button>
 
       <ul>
         {
